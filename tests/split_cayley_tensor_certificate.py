@@ -98,7 +98,7 @@ def main():
     check("guarded rational isometry polynomial kernel",
           [B(rotor_num(Y),rotor_num(Z))-D*D*B(Y,Z)])
     mat=[[B(u,v) for v in (X,Y,Z)] for u in (X,Y,Z)]
-    det=sp.det(sp.Matrix(mat),method="berkowitz")
+    det=sp.Matrix(mat).det(method="berkowitz")
     check("associator Gram/phi norm",
           [norm(assoc(X,Y,Z))-4*(det-phi(X,Y,Z)**2)])
     u,v,w,a,b,c=sp.symbols("u v w a b c")
