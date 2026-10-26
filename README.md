@@ -8,6 +8,8 @@ Finite-field tensor geometry, rational trigonometry, structured bilinear multipl
 - [Higher-rank tensor research program](research/higher-rank-tensor-program.md) — minimal tensor packages, Aschbacher questions, semilinear covariance, exact structured weights and verification gates.
 - [Exact polynomial certificate](tests/split_cayley_tensor_certificate.py) — runnable symbolic checks over ℤ[1/2].
 
+- [Parameterizable tensor-direction training-route audit experiment](research/training-route-audit-experiment.md) — exact-rational vector and factor-plane adapters, guarded diamonds, negative controls, and deterministic replay records.
+
 ## Verification
 
 Requires Python 3.10+ and SymPy. Run:
