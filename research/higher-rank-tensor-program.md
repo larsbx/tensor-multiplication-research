@@ -88,3 +88,20 @@ A finite field has no canonical order or conventional differentiable loss; claim
 **H5: null-safe incidence.** Extend spread-style predicates to degenerate subspaces through polynomial Gram data rather than undefined ratios.
 
 These are proposals, not established theorems.
+
+## G. Parameterizable tensor-direction route auditing (initial experiment)
+
+The [exact-rational training-route audit experiment](training-route-audit-experiment.md) implements one consumer of the minimal tensor-package discipline; source and independent tests are under `experiments/training_route_audit.py` and `tests/test_training_route_audit.py`. It does **not** add a universal multiplication to a tensor space and does not change any established Cayley theorem.
+
+A `DirectionModel` extracts either a single displacement (rank 1) or a proven reconstruction by two tensor factors (rank 2). The latter uses `det Gram(U,U)` and the mixed Gram determinant as its exterior-power invariants. Both return an undefined spread when their Gram denominator vanishes. The implementation runs in exact `Q` so ordered threshold policy is meaningful; a finite-field consumer must choose a different membership policy rather than importing `<=`.
+
+A local two-route witness requires separate evidence for (a) direction consistency, (b) endpoint agreement, and (c) replayable, fully specified update functions. Exact matching endpoints permit a local diamond relation; a merely bounded discrepancy does **not** create a homotopy relation. This distinction is a mandatory acceptance condition for any global route-audit or probabilistic quotient theorem.
+
+### Acceptance obligations for a next-stage training consumer
+
+- Define a complete optimizer state, including moments, step counters and randomness; restrict equivalence claims to the actual modeled state.
+- Define a replay contract tying signed/pinned code and checkpoint data to evaluated transitions; record quantization/projection loss separately.
+- Establish deterministic global error composition before interpreting sequences of bounded swaps as equivalent.
+- Prove basis invariance for each direction adapter and correctly handle null and rank-deficient cases.
+- Prove a valid higher-cell coherence law separately; three pairwise approximate swaps do not automatically give a genuine 3-cell.
+- Promote reusable Gram and guarded-spread operations to the canonical Mojo kernel library only after a differential test suite and a mathematically scoped contract are accepted.
