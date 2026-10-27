@@ -25,5 +25,5 @@ jobs:
 
       - name: Exact training-route prototype tests
         run: python -m unittest discover -s tests -p 'test_training_route_audit.py' -v
-      - name: Print reproducible route-audit records
+      - name: Exact F5 Coxeter boundary and effect controls\n        run: python -m unittest discover -s tests -p 'test_rt_coxeter_reference.py' -v\n      - name: Print reproducible route-audit records
         run: python experiments/training_route_audit.py > /tmp/training-route-audit.json
