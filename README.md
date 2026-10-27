@@ -10,13 +10,13 @@ Finite-field tensor geometry, rational trigonometry, structured bilinear multipl
 
 - [Parameterizable tensor-direction training-route audit experiment](research/training-route-audit-experiment.md) — exact-rational vector and factor-plane adapters, guarded diamonds, negative controls, and deterministic replay records.
 
-## Verification
+- [RT-gated Coxeter and cohomology boundary](research/rt-coxeter-selmer-cohomology.md) — explicit source-ordering gates, square/hexagon cellular homology, Selmer comparison typing and finite-field BSD caveats; independent F5 reference + tests.\n\n## Verification
 
 Requires Python 3.10+ and SymPy. Run:
 
 ```sh
 python -m pip install 'sympy>=1.12,<2'
-python tests/split_cayley_tensor_certificate.py
+python tests/split_cayley_tensor_certificate.py\npython -m unittest discover -s tests -p 'test_rt_coxeter_reference.py' -v
 ```
 
 The certificate checks polynomial **coefficient identities** rather than sampling a small finite field. Equalities over ℤ[1/2] transfer to any field of odd characteristic. A green workflow is a checked computation, not a substitute for proving separate imported Artin/Moufang classification results.
