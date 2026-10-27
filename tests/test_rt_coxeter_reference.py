@@ -57,6 +57,21 @@ class CoxeterRouteReferenceTests(unittest.TestCase):
                             execute((1, 0), zero, stateful))
         # Identical declared rays pass spread gate zero nevertheless.
 
+    def test_common_reset_suffix_cannot_mask_unequal_prefix_effects(self):
+        p = 5
+        zero = (0,) * 8
+        base = direction(0, p)
+        ops = {
+            0: lambda x: vec_add(x, base, p),
+            1: lambda x: tuple((2 * v) % p for v in x),
+            2: lambda x: zero,  # Non-injective: erases the difference.
+        }
+        # Final states match, but the adjacent operations fail exact equality.
+        self.assertEqual(execute((0, 1, 2), zero, ops),
+                         execute((1, 0, 2), zero, ops))
+        self.assertFalse(effect_swap_equal((0, 1, 2), 0, zero, ops))
+        self.assertTrue(effect_swap_equal((1, 0, 2), 1, zero, ops))
+
     def test_modular_rank_guards(self):
         self.assertEqual(rank_mod([[1, 2], [2, 4]], 5), 1)
         self.assertEqual(rank_mod([[0, 1], [1, 0]], 5), 2)
