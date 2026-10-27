@@ -169,10 +169,15 @@ def execute(ordering: Ordering, initial: Vector,
 
 def effect_swap_equal(start: Ordering, r: int, initial: Vector,
                       operations: dict[int, Callable[[Vector], Vector]]) -> bool:
-    # Replay the *entire* order at the genuine prefix; no spread inference.
-    return execute(start, initial, operations) == execute(
-        swapped(start, r), initial, operations
-    )
+    # Only certify the two swapped operations AT THEIR ACTUAL PREFIX.
+    # A common non-injective suffix can erase a genuine local discrepancy.
+    if not 0 <= r < len(start) - 1:
+        return False
+    prefix_state = execute(start[:r], initial, operations)
+    a, b = start[r], start[r + 1]
+    ab = operations[b](operations[a](prefix_state))
+    ba = operations[a](operations[b](prefix_state))
+    return ab == ba
 
 
 def run_reference() -> dict[str, object]:
