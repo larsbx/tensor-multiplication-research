@@ -70,7 +70,7 @@ class CoxeterRouteReferenceTests(unittest.TestCase):
         self.assertEqual(execute((0, 1, 2), zero, ops),
                          execute((1, 0, 2), zero, ops))
         self.assertFalse(effect_swap_equal((0, 1, 2), 0, zero, ops))
-        self.assertTrue(effect_swap_equal((1, 0, 2), 1, zero, ops))
+        self.assertTrue(effect_swap_equal((0, 1, 2), 1, zero, ops))
 
     def test_modular_rank_guards(self):
         self.assertEqual(rank_mod([[1, 2], [2, 4]], 5), 1)
